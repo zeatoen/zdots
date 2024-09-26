@@ -1,0 +1,39 @@
+# i3blocks configuration file
+#
+# The i3blocks man page describes the usage of the binary,
+# and its website describes the configuration:
+#
+#     https://vivien.github.io/i3blocks
+
+
+# Global properties
+separator=true
+separator_block_width=15
+markup=pango
+
+[greetings]
+color=#f5af19
+command=echo "Hello, $USER!"
+interval=once
+
+[ram]
+color=#5b72f5
+label=󰍛 
+command=$SCRIPT_DIR/memory/memory
+interval=1
+
+[battery]
+label=  
+command=$SCRIPT_DIR/battery/battery
+interval=10
+
+[bandwidth]
+label=󰓅  
+command=$SCRIPT_DIR/bandwidth/bandwidth -i "  " -o "  "
+interval=1
+color=#72a67f
+
+
+[time]
+command=date '+%Y-%m-%d %H:%M'
+interval=59

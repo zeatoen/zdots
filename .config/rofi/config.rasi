@@ -1,0 +1,75 @@
+
+
+configuration {
+  display-drun: "Applications: ";
+  display-window: "Windows: ";
+  drun-display-format: "{icon} {name}";
+  show-icons: true;
+  font: "FiraCode Nerd Font Regular 11";
+  modi: "drun,run,window";
+}
+@theme "/dev/null"
+
+*{
+  fg: #737b7d;
+  bg: #383c3d00;
+  br: 10px;
+  background-color: @bg;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  spacing: 0;
+}
+window {
+  width: 35%;
+  padding: 8px;
+  height: 40%;
+
+}
+listview{
+  padding: 5px 0 0 0;
+  background-color: #383c3d77;
+  border-radius: @br;
+
+}
+element{
+  padding: 7px 0;
+  border-radius: @br;
+  }
+inputbar{
+  children: [prompt,entry];
+  padding: 6px 0;
+}
+entry{
+  border-radius: @br;
+  color: #898989ee;
+}
+prompt{
+  color: #555555;
+}
+
+element-text{
+  background-color:  #383c3d00;
+  color:#c2d9ff;
+}
+element-text selected {
+  background-color: grey;
+  color:white;
+  text-size: 18px;
+}
+element selected {
+  background-color: grey;
+}
+
+element-icon{
+  size: 30px;
+  margin: 0 0 0 5px;
+}
+element-icon selected{
+
+  background-color: grey;
+
+}
+
+
+
