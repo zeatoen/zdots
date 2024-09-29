@@ -7,6 +7,7 @@ configuration {
   show-icons: true;
   font: "FiraCode Nerd Font Regular 11";
   modi: "drun,run,window";
+  terminal: "kitty";
 }
 @theme "/dev/null"
 

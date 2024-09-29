@@ -10,7 +10,8 @@ chosen=$(echo -e "$options" | rofi -dmenu -i -p "Choose action:")
 case "$chosen" in
     Lock)
         # Lock screen (change this command based on your lock screen utility)
-        i3lock;;
+        i3lock --nofork --line-uses-ring --separator-color=00000000 --ring-color=ffffff --color=23283311 --keyhl-color 191919 --insidever-color eeeeee --ringver-color 000000  --insidewrong-color 232833 --ringwrong-color 111111 --wrong-color eeeeee
+ ;;
     Logout)
         # Logout from the current session (adjust the command for your DE/WM)
         i3-msg exit;;

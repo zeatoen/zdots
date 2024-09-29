@@ -2,13 +2,13 @@
 direc=$1
 getvol(){
 
-per=$(wpctl get-volume 50 | awk '{print $2}')
+per=$(wpctl get-volume @DEFAULT_AUDIO_SINK@  | awk '{print $2}')
 
 percen=$(echo "scale=0;100*$per/1" | bc  )
 
 }
 checkmute(){
-  m=$(wpctl get-volume 50 | awk '{print $3}'  )
+  m=$(wpctl get-volume @DEFAULT_AUDIO_SINK@  | awk '{print $3}'  )
   [[ -z $m ]] && icon=~/.config/i3/nmute.png || icon=~/.config/i3/mute.png
 }
 
@@ -22,16 +22,16 @@ duns(){
 
 getvol
 if [[ -z $direc ]]; then
-  wpctl set-mute 50 toggle
+  wpctl set-mute @DEFAULT_AUDIO_SINK@  toggle
   duns
   exit
 fi
 
 if [ $percen -le 100 ]; then
-  [[ "-" == $direc || $percen -lt 100  ]] && wpctl set-volume 50 "0.05$direc"
+  [[ "-" == $direc || $percen -lt 100  ]] && wpctl set-volume @DEFAULT_AUDIO_SINK@  "0.05$direc"
   duns  
 else
-  wpctl set-volume 50 1 
+  wpctl set-volume @DEFAULT_AUDIO_SINK@  1 
   duns
 fi
 
