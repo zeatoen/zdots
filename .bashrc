@@ -6,7 +6,7 @@ esac
 
 #####---------- EXPORTS ----------###
 
-export BROWSER="firefox"
+export BROWSER="google-chrome"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export LESSHISTFILE=-

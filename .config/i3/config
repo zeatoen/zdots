@@ -133,7 +133,7 @@ client.focused          #00000000 #11111100 #ffffff00 #11111100   #11111100
 client.urgent		#040c23 #040c23 #ffffff #040c23 #040c23
 
 font pango:JetBrainsMonoNLNerdFont 9 
-gaps inner 3
+gaps inner 9
 
 # bar
 bar {
