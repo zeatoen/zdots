@@ -33,7 +33,6 @@ command=$SCRIPT_DIR/bandwidth/bandwidth -i "  " -o "  "
 interval=1
 color=#72a67f
 
-
 [time]
 command=date '+%Y-%m-%d %H:%M'
 interval=59

@@ -31,7 +31,7 @@ exec --no-startup-id greenclip daemon
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst -conf .config/dunst/dunstrc 
 exec --no-startup-id fusuma
-exec --no-startup-id $lockit && ~/.config/i3/not.sh
+exec --no-startup-id ~/.config/i3/not.sh
 
 
 

@@ -50,19 +50,20 @@
     mouse_left_click = "do_action" 
     mouse_middle_click = "close_all" 
     mouse_right_click = "close_current" 
+
 [experimental]
     per_monitor_dpi = false
 
 
 [urgency_low]
-    background = "#16161f55"
+    background = "#16161f"
 
     foreground = "#cdd6f4"
     highlight = "#696982"
     timeout = 4
-
+   
 [urgency_normal]
-    background = "#16161f55"
+    background = "#16161f"
     foreground = "#cdd6f4"
     highlight = "#696982"
     timeout = 6

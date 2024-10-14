@@ -1,13 +1,16 @@
 #!/bin/bash
 
 # Options for the rofi menu
-options="Lock\nLogout\nReboot\nShutdown"
+options="Lock\nLogout\nReboot\nShutdown\nSuspend"
 
 # Launch the rofi menu and get the chosen option
 chosen=$(echo -e "$options" | rofi -dmenu -i -p "Choose action:")
 
 # Take action based on the choice
 case "$chosen" in
+  Suspend)
+    systemctl suspend
+    ;;
     Lock)
         # Lock screen (change this command based on your lock screen utility)
         i3lock --nofork --line-uses-ring --separator-color=00000000 --ring-color=ffffff --color=23283311 --keyhl-color 191919 --insidever-color eeeeee --ringver-color 000000  --insidewrong-color 232833 --ringwrong-color 111111 --wrong-color eeeeee
