@@ -2,7 +2,7 @@
 # set vars
 set $mod Mod4
 set $alt Mod1
-set $config_dir ~/.config/i3
+set $config_dir ~/.config/scripts
 set $lockit i3lock --nofork --line-uses-ring --separator-color=00000000 --ring-color=ffffff --color=23283311 --keyhl-color 191919 --insidever-color eeeeee --ringver-color 000000  --insidewrong-color 232833 --ringwrong-color 111111 --wrong-color eeeeee
 set $getbrightness  brightnessctl | grep C |  sed -n 's/.*(\([0-9]*\)%).*/\1/p'
 
@@ -30,9 +30,8 @@ exec --no-startup-id xrandr --output eDP --brightness 0.8
 exec --no-startup-id greenclip daemon 
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst -conf .config/dunst/dunstrc 
-exec --no-startup-id fusuma
-exec --no-startup-id ~/.config/i3/not.sh
-
+# exec --no-startup-id fusuma
+# exec --no-startup-id ~/.config/i3/not.sh
 
 
 
@@ -53,8 +52,8 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+space exec --no-startup-id rofi -show drun
 bindsym $mod+v exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
-bindsym $mod+x exec --no-startup-id ~/.config/i3/powermenu.sh 
-bindsym $mod+t exec --no-startup-id ~/.config/i3/floating_kitty.sh
+bindsym $mod+x exec --no-startup-id $script_dir/powermenu.sh 
+bindsym $mod+t exec --no-startup-id $script_dir/floating_kitty.sh
 bindsym Print exec --no-startup-id maim  |maim | tee >( magick  png:- -resize 1024x png:- | xclip -sel clip -t image/png ) > ~/Screenshot.png && dunstify "Sceenshot taken and saved." -t 1000
 bindsym Shift+Print exec --no-startup-id maim -s | xclip -selection clipboard -t image/png -i && dunstify "Sceenshot taken." -t 1000
 bindsym $alt+p exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png -i && dunstify "Sceenshot taken." -t 1000

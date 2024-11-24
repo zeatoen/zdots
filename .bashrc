@@ -30,3 +30,5 @@ export data='/run/media/zeatoen/Files/data'
 alias show_battery="cat /sys/class/power_supply/BAT0/capacity"
 printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "bash" }}\x9c'
 alias trs="gio trash"
+eval "$(zoxide init bash)"
+

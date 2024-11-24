@@ -1,7 +1,7 @@
 #!/bin/bash
 
 batscr=~/.config/i3blocks/scripts/battery/battery
-sound=~/.config/i3/my_battery_getting_low.mp3 
+sound=~/.config/scripts/assets/my_battery_getting_low.mp3 
 disnot(){
   mpg123 $sound &
   
@@ -14,13 +14,13 @@ disnot(){
 while  [ 1 ];
 do
   if [ $( $batscr | head -n 1 | sed 's/\([0-9]*\)%.*/\1/p' -n) -le 5 ] && [ $( $batscr | head -n 1 | sed 's/.*% \(.*\)/\1/p' -n) == "DIS"  ]; then
-    kitty bash -c "sleep 1 && cmatrix -L" &
-    id=$!
-    sleep 0.5
-    wid=$(xdotool search --pid $id )
-    i3-msg "[id=$wid] fullscreen enable"
+    # kitty bash -c "sleep 1 && cmatrix -L" &
+    # id=$!
+    # sleep 0.5
+    # wid=$(xdotool search --pid $id )
+    # i3-msg "[id=$wid] fullscreen enable"
     disnot
-    kill $id
+    # kill $id
 
   fi
   sleep 60
