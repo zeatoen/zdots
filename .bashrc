@@ -6,7 +6,7 @@ esac
 
 #####---------- EXPORTS ----------###
 
-export BROWSER="google-chrome"
+export BROWSER="google-chrome-stable"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export LESSHISTFILE=-
@@ -30,5 +30,10 @@ export data='/run/media/zeatoen/Files/data'
 alias show_battery="cat /sys/class/power_supply/BAT0/capacity"
 printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "bash" }}\x9c'
 alias trs="gio trash"
+alias who_gh="cat ~/.config/gh/hosts.yml | grep user: | cut -d ":" -f2"
 eval "$(zoxide init bash)"
+
+# Avoid duplicate commands in history
+export HISTCONTROL=ignoredups:erasedups
+shopt -s histappend
 

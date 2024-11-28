@@ -13,7 +13,7 @@ configuration {
 
 *{
   fg: #737b7d;
-  bg: #383c3d00;
+  bg: #383c3d;
   br: 10px;
   background-color: @bg;
   padding: 0;
